@@ -1,0 +1,23 @@
+{
+  "name": "Trying-out-MultiProcessing-with-Node.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/41x3n/Trying-out-MultiProcessing-with-Node.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/41x3n/Trying-out-MultiProcessing-with-Node.js/issues"
+  },
+  "homepage": "https://github.com/41x3n/Trying-out-MultiProcessing-with-Node.js#readme",
+  "dependencies": {
+    "fastify": "^3.11.0"
+  }
+}
