@@ -18,6 +18,12 @@
   },
   "homepage": "https://github.com/41x3n/Trying-out-MultiProcessing-with-Node.js#readme",
   "dependencies": {
-    "fastify": "^3.11.0"
+    "@types/busboy": "^0.2.3",
+    "fastify": "^3.11.0",
+    "fastify-multer": "^2.0.2",
+    "fastify-multipart": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
