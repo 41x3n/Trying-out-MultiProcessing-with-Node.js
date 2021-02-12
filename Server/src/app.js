@@ -7,6 +7,8 @@ const upload = multer({ dest: 'cache/incoming/' });
 fastify.register(multer.contentParser); //Make sure you load multer related files way before router files
 
 fastify.register(require('./routers/single/jsonToCSV/file'));
+fastify.register(require('./routers/single/jsonToCSV/data'));
+fastify.register(require('./routers/single/jsonToCSV/api'));
 
 fastify.get('/', async (request, reply) => {
 	return { hello: 'world' };
