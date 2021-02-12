@@ -15,29 +15,25 @@ async function routes(fastify, options) {
 		'/single/jsonToCSV/file',
 		{ preHandler: upload.single('json') },
 		async (request, reply) => {
-			try {
-				const data = fs.readFileSync(`${request.file.path}`);
-				let json = JSON.parse(data);
-				let fileName = `${request.file.originalname.split('.')[0]}.csv`;
+			const data = fs.readFileSync(`${request.file.path}`);
+			let json = JSON.parse(data);
+			let fileName = `${request.file.originalname.split('.')[0]}.csv`;
 
-				converter
-					.json2csvAsync(json)
-					.then((csv) => {
-						reply
-							.code(200)
-							.header('Content-Type', 'text/csv')
-							.header(
-								'Content-disposition',
-								`attachment; filename=${fileName}`
-							)
-							.send(csv);
-					})
-					.catch((err) => {
-						reply.code(500).send('Error parsing file.');
-					});
-			} catch (error) {
-				reply.code(400).send(error);
-			}
+			await converter
+				.json2csvAsync(json)
+				.then((csv) => {
+					reply
+						.code(200)
+						.header('Content-Type', 'text/csv')
+						.header(
+							'Content-disposition',
+							`attachment; filename=${fileName}`
+						)
+						.send(csv);
+				})
+				.catch((err) => {
+					reply.code(500).send('Error parsing file.');
+				});
 		}
 	);
 }
