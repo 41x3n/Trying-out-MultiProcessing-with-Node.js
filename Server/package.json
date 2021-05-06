@@ -19,9 +19,7 @@
   "homepage": "https://github.com/41x3n/Trying-out-MultiProcessing-with-Node.js#readme",
   "dependencies": {
     "@types/busboy": "^0.2.3",
-    "cors": "^2.8.5",
     "fastify": "^3.11.0",
-    "fastify-cors": "^6.0.0",
     "fastify-multer": "^2.0.2",
     "fastify-multipart": "^4.0.0",
     "json-2-csv": "^3.10.2",
