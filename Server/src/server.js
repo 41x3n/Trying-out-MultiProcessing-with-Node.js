@@ -2,6 +2,10 @@ const fastify = require('fastify')({
 	logger: true
 });
 
+fastify.register(require('fastify-cors'), { 
+	// put your options here
+  })
+
 const multer = require('fastify-multer');
 const upload = multer({ dest: 'cache/incoming/' });
 fastify.register(multer.contentParser); //Make sure you load multer related files way before router files
@@ -16,7 +20,7 @@ fastify.get('/', async (request, reply) => {
 
 const start = async () => {
 	try {
-		await fastify.listen(3000);
+		await fastify.listen(5000);
 	} catch (err) {
 		fastify.log.error(err);
 		process.exit(1);
